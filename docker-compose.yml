@@ -1,0 +1,19 @@
+
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: "mi_mysql"
+    restart: "always"
+    environment:
+      MYSQL_ROOT_PASSWORD: "FeNrIr2233@"
+      MYSQL_DATABASE: "Base_Pokemon"
+      MYSQL_USER: "usuario"
+      MYSQL_PASSWORD: "FeNrIr2233@"
+    ports:
+      - "3307:3306"
+    volumes:
+      - "C:/Users/USUARIO/Desktop/ejercicioBD/compose:/var/lib/mysql"
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  mysql_data:
